@@ -163,7 +163,7 @@ if calculate_button:
     
     # Display price results
     if show_call:
-        st.subheader("Call Option Price Comparison")
+        st.subheader("Call Option Price")
         call_data = []
         for method, result in results.items():
             note = f"±{1.96*result.get('call_se', 0):.4f}" if 'call_se' in result else "-"
@@ -181,7 +181,7 @@ if calculate_button:
         }), use_container_width=True)
     
     if show_put:
-        st.subheader("Put Option Price Comparison")
+        st.subheader("Put Option Price")
         put_data = []
         for method, result in results.items():
             note = f"±{1.96*result.get('put_se', 0):.4f}" if 'put_se' in result else "-"
