@@ -234,16 +234,6 @@ if calculate_button:
     
     # Calculation suggestions
     st.markdown("---")
-    st.subheader("💡 Calculation Suggestions")
-    
-    if len(results) == 1:
-        method = list(results.keys())[0]
-        st.info(f"Currently using only **{method}**. Consider enabling multiple methods for comparison and validation.")
-    else:
-        # Find the fastest calculation method
-        fastest_method = min(results.items(), key=lambda x: x[1]['time'])[0]
-        st.info(f"**{fastest_method}** is the fastest. BSM analytical solution is the most precise, Monte Carlo is suitable for complex derivatives, and Finite Difference is ideal for American options.")
-
 else:
     # Initial state display
     st.markdown("---")
