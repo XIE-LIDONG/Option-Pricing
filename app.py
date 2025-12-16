@@ -12,6 +12,16 @@ st.set_page_config(
 
 # Title
 st.title("📊 Option Pricing Calculator")
+st.markdown(
+    """
+    <div style='display: flex; justify-content: space-between; align-items: center;'>
+        <h1 style='margin: 0;'>📄 DOCX Document Language Translator</h1>
+        <p style='color: #666666; font-size: 14px; margin: 0;'>By XIE LI DONG</p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
 
 # ==================== Import calculation functions ====================
 try:
