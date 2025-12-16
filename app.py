@@ -15,7 +15,7 @@ st.title("📊 Option Pricing Calculator")
 st.markdown(
     """
     <div style='text-align: right; margin-top: -10px;'>
-        <p style='margin: 0;'>XIE LI DONG</p>
+        <p style='margin: 0;'>By XIE LI DONG</p>
     </div>
     """,
     unsafe_allow_html=True
