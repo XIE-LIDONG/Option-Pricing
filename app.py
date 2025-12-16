@@ -259,6 +259,5 @@ else:
            - Observe if results converge to BSM
         """)
 
-# Footer
-st.markdown("---")
-st.caption("🎓 Option Pricing Calculator | Using BSM, Monte Carlo, Finite Difference Methods")
+
+
