@@ -3,23 +3,23 @@ import numpy as np
 import time
 import pandas as pd
 
-# Page configuration
 st.set_page_config(
     page_title="Option Pricing Calculator",
     page_icon="📊",
     layout="wide"
 )
 
-# Title
+# 核心标题
 st.title("📊 Option Pricing Calculator")
+# 署名（靠右）
 st.markdown(
     """
-        <p style='color: #666666; font-size: 14px; margin: 0;'>By XIE LI DONG</p>
+    <div style='text-align: right; margin-top: -10px;'>
+        <p style='margin: 0;'>XIE LI DONG</p>
     </div>
     """,
     unsafe_allow_html=True
 )
-
 
 # ==================== Import calculation functions ====================
 try:
