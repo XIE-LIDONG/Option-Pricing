@@ -1,4 +1,4 @@
-streamlit==1.28.0
-numpy==1.24.3
-scipy==1.11.0
-pandas==2.0.3
+
+streamlit>=1.30.0
+numpy>=1.26.0  # 1.26+版本不再依赖distutils
+scipy>=1.11.0  # 若用到scipy，同步升级
