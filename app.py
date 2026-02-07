@@ -20,7 +20,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# ==================== Import calculation functions ====================
+# Import calculation functions 
 try:
     # Import European functions
     from function import black_scholes, monte_carlo_option_price, finite_difference_price
@@ -31,7 +31,7 @@ except ImportError as e:
     st.error(f"❌ Failed to import calculation functions: {e}")
     st.stop()
 
-# ==================== Sidebar - Parameter Input ====================
+# Sidebar - Parameter Input 
 with st.sidebar:
     st.header("⚙️ Parameter Settings")
     
@@ -102,7 +102,7 @@ with st.sidebar:
     st.markdown("---")
     calculate_button = st.button("🚀 Calculate", type="primary", use_container_width=True)
 
-# ==================== Main Display Area ====================
+# Main Display Area
 if calculate_button:
     # Check at least one output is selected
     if not (show_call or show_put):
@@ -134,7 +134,7 @@ if calculate_button:
     total_steps = len(selected_methods)
     current_step = 0
     
-    # ==================== European Option Calculations ====================
+    # European Option Calculations
     if option_style == "European Option":
         # 1. BSM Analytical
         if use_bsm:
@@ -199,7 +199,7 @@ if calculate_button:
             except Exception as e:
                 st.error(f"Finite Difference calculation error: {e}")
     
-    # ==================== American Option Calculations ====================
+    # American Option Calculations
     else:
         # 1. Binomial Tree (American)
         if use_binomial:
@@ -284,13 +284,13 @@ if calculate_button:
             except Exception as e:
                 st.error(f"American Finite Difference calculation error: {e}")
     
-    # ==================== Finalize Progress ====================
+    # Finalize Progress
     status_text.text("Calculation completed!")
     time.sleep(0.5)
     progress_bar.empty()
     status_text.empty()
     
-    # ==================== Display Results ====================
+    # Display Results 
     st.markdown("---")
     st.header(f"📈 {option_style} Calculation Results")
     
@@ -401,7 +401,7 @@ else:
     st.markdown("---")
     st.info("👈 Please set parameters on the left, select calculation methods and output types, then click 'Calculate'")
     
-    # Display examples (English)
+    # Display examples 
     with st.expander("📚 Example Usage"):
         st.markdown("""
         ### 1. Basic European Option Calculation
