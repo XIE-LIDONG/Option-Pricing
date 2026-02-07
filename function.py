@@ -2,7 +2,7 @@ import numpy as np
 from scipy.stats import norm
 import time
 
-# ==================== BSM Analytical Solution ====================
+#BSM Analytical Solution 
 def black_scholes(S, K, T, r, sigma):
     # 1. Calculate d1 and d2
     d1 = (np.log(S / K) + (r + 0.5 * sigma ** 2) * T) / (sigma * np.sqrt(T))
@@ -16,7 +16,7 @@ def black_scholes(S, K, T, r, sigma):
     
     return call_price, put_price
 
-# ==================== Monte Carlo Simulation ====================
+# Monte Carlo Simulation
 def monte_carlo_option_price(S, K, T, r, sigma, n_simulations=1000000):
     # 1. Generate random stock price paths (generated once for both call/put to improve efficiency)
     z = np.random.standard_normal(n_simulations)  # Normal random numbers
@@ -36,7 +36,7 @@ def monte_carlo_option_price(S, K, T, r, sigma, n_simulations=1000000):
     
     return call_price, put_price, call_se, put_se
 
-# ==================== Finite Difference Method ====================
+# Finite Difference Method 
 def finite_difference_price(S0, K, T, r, sigma, Nt=1000, Ns=100): 
     # 1. Grid parameters (satisfy CFL condition: dt ≤ dS²/(σ²Smax² + r dS) to ensure stability)
     dt = T / Nt
@@ -132,12 +132,7 @@ def binomial_american(S, K, T, r, sigma, option_type='put', n=100):
 
 # Trinomial Tree Method
 def trinomial_american(S, K, T, r, sigma, option_type='put', n=50):
-    """
-    Trinomial Tree for American Option Pricing (Simplified Version)
-    
-    Trinomial Tree: Each node has three possibilities (up, flat, down)
-    Faster convergence than Binomial Tree (fewer steps for same accuracy)
-    """
+
     # 1. Calculate parameters
     dt = T / n
     dx = sigma * np.sqrt(3 * dt)  # Price step size
